@@ -4,8 +4,9 @@
         <param name="disparity_range" type="int" value="128"/>
      </node>
   </group>
+  <arg name="scene" default="amphora.xml" />
+  <node name="uwsim" pkg="uwsim" type="uwsim" args="--configfile $(arg scene)" output="screen" respawn="false" />
   <node name="arm5e_service_server" pkg="arm5e_arm_services" type="arm5e_service_server" output="screen" respawn="false"/>
-  <node name="arm5e_pc_grasp_planning_server" pkg="pcl_manipulation" type="arm5e_pc_grasp_planning_server" output="screen" respawn="false"/>
-  
+  <node name="arm5e_pc_grasp_planning_server" pkg="pcl_manipulation" type="arm5e_pc_grasp_planning_server" output="screen" respawn="false"/>  
 </launch>
 
