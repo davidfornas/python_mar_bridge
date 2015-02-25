@@ -1,4 +1,5 @@
 <launch>
+  <!-- Launch stereo reconstruction, UWSim, perception service and arm services prior to run Python scripts -->
   <group ns="stereo_down">
      <node name="stereo_image_proc" pkg="stereo_image_proc" type="stereo_image_proc" respawn="true" output="screen">
         <param name="disparity_range" type="int" value="128"/>

@@ -76,17 +76,16 @@ def callDetectObject():
 	
 print("Lets test some services...: ")
 
-#Move ARM
-#while 1<2:
-#	callMoveArm([-0.1,-0.1,0,0,0])
+#Move ARM (should be done for a while)
+callMoveArm([-0.1,-0.1,0,0,0])
 
 #Test Kinematics
-#j=callGetJoints()
-#b=callFK(j)
-#callIK(b)
+current_joints=callGetJoints()
+eef_pose=callFK(current_joints)
+callIK(eef_pose)
 
 #Object detection
-res=callDetectObject()
-res2=callIK(res.cMo)
-bMe=callFK(res2.out_joints)
-callMoveArmTo(res2.out_joints)
+cylinder=callDetectObject()
+arm_config=callIK(cylinder.cMo)
+bMe=callFK(arm_config.out_joints)
+callMoveArmTo(arm_config.out_joints)

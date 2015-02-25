@@ -53,6 +53,7 @@ def sendPosition(x, y, z):
 		dz = z-p.z
 	sub.unregister()
 
+#Test functions
 if __name__ == '__main__':
     try:
 		rospy.init_node('navigator', anonymous=True)
